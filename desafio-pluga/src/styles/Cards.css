@@ -1,0 +1,25 @@
+.card-container {
+    display: flex;
+}
+.card {
+    width: 150px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d3d3d3;
+}
+
+.card-img {
+    border-radius: 10%;
+}
+
+.card-link {
+    text-align: center
+}
+
+.card-name {
+    text-decoration: none;
+    color: #252525;
+    font: helvetica;
+    font-size: 20px;
+    align-items: center;
+}
