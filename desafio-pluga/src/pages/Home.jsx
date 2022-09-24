@@ -1,16 +1,17 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
+import Modal from 'react-modal';
 import Cards from '../components/Cards';
 import Search from '../components/Search';
+import ModalCard from '../components/ModalCard';
 import api from '../services/api';
 
 function Home() {
-  // const [cards, setCards] = useState([]);
   const [search, setSearch] = useState('');
-  const [tools, setTools] = React.useState([]);
-  const [filter, setFilter] = React.useState([]);
+  const [tools, setTools] = useState([]);
+  const [filter, setFilter] = useState([]);
   const [upPage, setUpPage] = useState(0);
   const [endPage, setEndPage] = useState(11);
+  const [mIsOpen, setMIsOpen] = useState(false);
 
   useEffect(() => {
     async function loadTools() {
@@ -42,7 +43,24 @@ function Home() {
     setUpPage(upPage - 12);
     setEndPage(endPage - 12);
   }
-  
+
+  const modalOpen = (obj) => {
+    const lStorage = JSON.parse(localStorage.getItem('tools') || []);
+
+    if (lStorage.length < 4) {
+      const newTools = [obj, ...lStorage];
+      localStorage.setItem('tools', JSON.stringify(newTools));
+    } else {
+      const newTools = [obj, ...lStorage.slice(0, 3)];
+      localStorage.setItem('tools', JSON.stringify(newTools));
+    }
+    setMIsOpen(true);
+  }
+
+  const modalClose = () => {
+    setMIsOpen(false);
+  }
+
   return (
     <div>
       <div>
@@ -59,9 +77,20 @@ function Home() {
               color={color}
               icon={icon}
               link={link}
+              click={() => modalOpen({
+                app_id, name, color, icon, link,
+              })}
             />
           )) : <span>Carregando...</span> }
       </div>
+
+      <Modal
+        mIsOpen={mIsOpen}
+        onRequestClose={() => modalClose()}
+      >
+        <ModalCard />
+        <button type="button" onClick={modalClose}>Fechar</button>
+      </Modal>
 
       <div>
         <button type="button" onClick={backPage} disabled={upPage <= 0}>
