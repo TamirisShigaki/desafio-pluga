@@ -1,5 +1,7 @@
 .card-container {
     display: flex;
+    padding: 12px;
+    margin: 8px;
 }
 .card {
     width: 150px;
@@ -13,7 +15,7 @@
 }
 
 .card-link {
-    text-align: center
+    text-align: center;
 }
 
 .card-name {
