@@ -4,6 +4,7 @@ import Cards from '../components/Cards';
 import Search from '../components/Search';
 import ModalCard from '../components/ModalCard';
 import api from '../services/api';
+import '../styles/Home.css';
 
 function Home() {
   const [search, setSearch] = useState('');
@@ -63,26 +64,26 @@ function Home() {
 
   return (
     <div>
-      <div>
         <Search
         state={search}
         callback={handleChange}
         />
-        {
-          tools.length ? filter
-          .filter((_element, index) => index >= upPage && index <= endPage).map(({ app_id, name, color, icon, link }) => (
-            <Cards
-              key={app_id}
-              name={name}
-              color={color}
-              icon={icon}
-              link={link}
-              click={() => modalOpen({
-                app_id, name, color, icon, link,
-              })}
-            />
-          )) : <span>Carregando...</span> }
-      </div>
+        <div className="home-container">
+          {
+            tools.length ? filter
+            .filter((_element, index) => index >= upPage && index <= endPage).map(({ app_id, name, color, icon, link }) => (
+              <Cards
+                key={app_id}
+                name={name}
+                color={color}
+                icon={icon}
+                link={link}
+                open={() => modalOpen({
+                  app_id, name, color, icon, link,
+                })}
+              />
+            )) : <span>Carregando...</span> }
+        </div>
 
       <Modal
         mIsOpen={mIsOpen}
@@ -92,12 +93,12 @@ function Home() {
         <button type="button" onClick={modalClose}>Fechar</button>
       </Modal>
 
-      <div>
-        <button type="button" onClick={backPage} disabled={upPage <= 0}>
+      <div className="home-btn">
+        <button className="home-btn-back" type="button" onClick={backPage} disabled={upPage <= 0}>
           <span>Voltar</span>
         </button>
 
-        <button type="button" onClick={nextPage} disabled={endPage > tools.length - 1}>
+        <button className="home-btn-next" type="button" onClick={nextPage} disabled={endPage > tools.length - 1}>
           <span>Proxima</span>
         </button>
       </div>
