@@ -4,10 +4,21 @@
     margin: 8px;
 }
 .card {
-    width: 150px;
-    border: none;
-    border-radius: 8px;
     background-color: #d3d3d3;
+    border-radius: 15px;
+    box-shadow: 4px 6px 8px rgb(4, 43, 41);
+    margin: 10px;
+    opacity: 0.7;
+    width: 250px;
+}
+
+.card:hover {
+    background-color: #d3d3d3;
+    border-radius: 15px;
+    box-shadow: 4px 6px 8px rgb(4, 43, 41);
+    margin: 10px;
+    opacity: 1;
+    width: 250px;
 }
 
 .card-img {
@@ -21,7 +32,7 @@
 .card-name {
     text-decoration: none;
     color: #252525;
-    font: helvetica;
+    font-weight: 800;
     font-size: 20px;
     align-items: center;
 }
