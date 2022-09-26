@@ -1,37 +1,54 @@
 .modal-container {
     flex-wrap: wrap;
-    gap: 15px;
     margin: 0 auto;
     justify-content: center;
+    margin-top: 500px;
 }
 
-.modal {
+/* .modal-element {
+    padding: 50px
+} */
+
+.modal{
     display: flex;
-    gap: 50px;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.modal-img {
-    border-radius: 10%;
+.modal-img{
+    border-radius: 10px;;
+    width: 100px;
 }
 
 .modal-link {
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #03bb85;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     padding: 20px;
-    width: 100%;
+    width: 80%;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
     margin-bottom: 10px;
-    margin-top: 10px;
 }
 
 .modal-acess {
     text-decoration: none;
     color: #FFFFFF;
 }
+    
+.modal-view{
+    margin: 10px;
+}
+    
+.modal-img-view {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    width: 100px;
+}
+    
