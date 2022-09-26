@@ -3,8 +3,10 @@ import Modal from 'react-modal';
 import Cards from '../components/Cards';
 import Search from '../components/Search';
 import ModalCard from '../components/ModalCard';
-import api from '../services/api';
+import API from '../services/API';
 import '../styles/Home.css';
+
+Modal.setAppElement('#root');
 
 function Home() {
   const [search, setSearch] = useState('');
@@ -16,7 +18,7 @@ function Home() {
 
   useEffect(() => {
     async function loadTools() {
-      const response = await api();
+      const response = await API();
       setTools(response.data);
       setFilter(response.data);
     }
@@ -46,7 +48,8 @@ function Home() {
   }
 
   const modalOpen = (obj) => {
-    const lStorage = JSON.parse(localStorage.getItem('tools') || []);
+
+    const lStorage = JSON.parse(localStorage.getItem('tools')) || [];
 
     if (lStorage.length < 4) {
       const newTools = [obj, ...lStorage];
@@ -55,6 +58,7 @@ function Home() {
       const newTools = [obj, ...lStorage.slice(0, 3)];
       localStorage.setItem('tools', JSON.stringify(newTools));
     }
+
     setMIsOpen(true);
   }
 
@@ -63,7 +67,7 @@ function Home() {
   }
 
   return (
-    <div>
+    <div id="root">
         <Search
         state={search}
         callback={handleChange}
@@ -86,11 +90,13 @@ function Home() {
         </div>
 
       <Modal
-        mIsOpen={mIsOpen}
+        isOpen={mIsOpen}
         onRequestClose={() => modalClose()}
+        overlayClassName="modal-overlay"
+        className="home-modal"
       >
         <ModalCard />
-        <button type="button" onClick={modalClose}>Fechar</button>
+        <button className="home-modal-btn" type="button" onClick={modalClose}>Fechar</button>
       </Modal>
 
       <div className="home-btn">
