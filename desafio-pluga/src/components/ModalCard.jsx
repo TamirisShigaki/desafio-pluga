@@ -9,11 +9,10 @@ function ModalCard() {
                     return(
                         <div>
                             <div className="modal">
-                                <div className="modal-img" style={{
-                    backgroundColor: `${color}`,
-                  }}>
+                                <div className="modal-img" style={{backgroundColor: `${color}`}}>
                                     <img src={icon} alt={name} />
                                 </div>
+                                
                                 <div>
                                     <span>{name}</span>
                                     <button className="modal-link" type="button"><a className="modal-acess" href={link} target="_blank" rel="noreferrer">Acessar</a></button>
