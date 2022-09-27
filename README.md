@@ -30,19 +30,19 @@ Acesse o diretório clonado:
 cd desafio-pluga
 ```
 
-Depois de feito o clone, abra o diretório onde foi clonado e digite o seguinte comando:
+Instale as dependencias:
 
 ```
 npm install
 ```
 
-Após completado as instalação das dependências, inicie o servidor com o seguinte comando em seu terminal:
+Execute a aplicação:
 
 ```
 npm start
 ```
 
-Para verificação dos teste digite o seguinte comando:
+Execute os testes:
 
 ```
 npm test
