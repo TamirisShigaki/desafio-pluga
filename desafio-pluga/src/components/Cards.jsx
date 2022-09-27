@@ -4,7 +4,7 @@ import '../styles/Cards.css';
 function Cards({ name, color, icon, link, open }) {
   return (
     <div className="card-container">
-      <button className="card-button" type="button" onClick={open}>
+      <button data-testid="card-btn-open" className="card-button" type="button" onClick={open}>
       <div className="card">
 
       <div className="card-img" style={{ backgroundColor: `${color}` }}>

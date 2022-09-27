@@ -3,10 +3,10 @@ import Modal from 'react-modal';
 import Cards from '../components/Cards';
 import Search from '../components/Search';
 import ModalCard from '../components/ModalCard';
-import API from '../services/API';
+import api from '../services/API';
 import '../styles/Home.css';
 
-Modal.setAppElement('#root');
+// Modal.setAppElement('#root');
 
 function Home() {
   const [search, setSearch] = useState('');
@@ -18,7 +18,7 @@ function Home() {
 
   useEffect(() => {
     async function loadTools() {
-      const response = await API();
+      const response = await api();
       setTools(response.data);
       setFilter(response.data);
     }
@@ -67,7 +67,7 @@ function Home() {
   }
 
   return (
-    <div id="root">
+    <div>
         <Search
         state={search}
         callback={handleChange}
