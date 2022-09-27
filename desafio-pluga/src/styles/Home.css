@@ -22,10 +22,11 @@
     
 .home-modal {
     background-color: #e5e4e2;
+    position: absolut;
     width: 70%;
-    width: 700px;
+    max-width: 700px;
     height: 70%;
-    max-height: 700px;
+    max-height: 800px;
     border-radius: 12px;
     flex-direction: column;
     padding: 10px;
@@ -42,11 +43,11 @@
     color: #FFFFFF;
     text-align: center;
     font-size: 16px;
-    padding: 20px;
-    width: 30%;
+    padding: 15px;
+    width: 20%;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
+    margin-top: 50px;
     margin-bottom: 10px;
 }
     

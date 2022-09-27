@@ -2,18 +2,18 @@
     flex-wrap: wrap;
     margin: 0 auto;
     justify-content: center;
-    margin-top: 500px;
 }
 
-/* .modal-element {
-    padding: 50px
-} */
+.modal-element {
+    position: relative;
+}
 
 .modal{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 }
 
 .modal-img{
@@ -28,8 +28,8 @@
     color: #FFFFFF;
     text-align: center;
     font-size: 16px;
-    padding: 20px;
-    width: 80%;
+    padding: 15px;
+    width: 70%;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
@@ -42,13 +42,15 @@
 }
     
 .modal-view{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    float:left;
     margin: 10px;
 }
     
 .modal-img-view {
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
     width: 100px;
+    height: 100px;
 }
     
