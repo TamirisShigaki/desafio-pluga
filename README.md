@@ -21,7 +21,7 @@ A aplicação é baseada em uma tela com uma lista (de cardes) dos app integrado
 Clone o prjeto
 
 ```
-git clone git@github.com:rodolforezende/DesafiodaPluga-DevJr.git
+git clone git@github.com:TamirisShigaki/desafio-pluga.git
 ```
 
 Acesse o diretório clonado:
