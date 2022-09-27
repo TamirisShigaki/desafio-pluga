@@ -20,7 +20,7 @@ A aplicação é baseada em uma tela com uma lista (de cards) dos app integrados
 
 ## Pagina(Aplicação)
 
-![img](src/images/aplicacao.gif)
+![img](src/image/aplicacao.gif)
 
 ## ⚙️ Como utilizar?
 
