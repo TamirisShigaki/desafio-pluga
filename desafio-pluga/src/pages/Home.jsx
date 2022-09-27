@@ -5,6 +5,7 @@ import Search from '../components/Search';
 import ModalCard from '../components/ModalCard';
 import api from '../services/API';
 import '../styles/Home.css';
+import { v4 as uuidv4 } from "uuid";
 
 // Modal.setAppElement('#root');
 
@@ -77,7 +78,7 @@ function Home() {
             tools.length ? filter
             .filter((_element, index) => index >= upPage && index <= endPage).map(({ app_id, name, color, icon, link }) => (
               <Cards
-                key={app_id}
+                key={uuidv4()}
                 name={name}
                 color={color}
                 icon={icon}

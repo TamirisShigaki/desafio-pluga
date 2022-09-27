@@ -1,4 +1,5 @@
 import '../styles/ModalCard.css';
+import { v4 as uuidv4 } from "uuid";
 
 function ModalCard() {
     const lStorage = JSON.parse(localStorage.getItem('tools'));
@@ -8,7 +9,7 @@ function ModalCard() {
             lStorage.map(({ name, icon, color, link}, index) => {
                 if (index === 0) {
                     return(
-                        <div className="modal-element">
+                        <div key={uuidv4()} className="modal-element">
                             <div className="modal">
                                 <div className="modal-img" style={{backgroundColor: `${color}`}}>
                                     <img src={icon} alt={name} />
@@ -24,12 +25,9 @@ function ModalCard() {
                     )
                 }
                 return(
-                    <div className="modal-view">
+                    <div key={uuidv4()} className="modal-view" >
                         <div className="modal-img-view" style={{ backgroundColor: `${color}` }}>
                             <img src={icon} alt={name}/>
-                        </div>
-                            
-                        <div>
                             <span>{name}</span>
                         </div>
                     </div>
