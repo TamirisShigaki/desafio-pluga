@@ -19,7 +19,7 @@ A aplicação é baseada em uma tela com uma lista (de cards) dos app integrados
 
 ## Pagina(Aplicação)
 
-![img](desafio-pluga/src/images/aplicacao.gif)
+![img](src/images/aplicacao.gif)
 
 ## ⚙️ Como utilizar?
 
